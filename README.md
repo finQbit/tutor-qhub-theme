@@ -22,6 +22,43 @@ the compiled CSS and the images. `tests/release/run.sh` installs the wheel in a
 clean environment with Tutor 22.0.4 and tutor-mfe 22.1.2, then renders the theme.
 See [SCENARIOS.md](SCENARIOS.md) for the application checks required before rollout.
 
+## Local development stack
+
+The stack lives in this repository and uses its theme sources through an editable
+install. It needs uv, Node 22 and Docker, with no separate application repository.
+The Docker build context contains only the rendered theme, brand CSS and
+[dev/Dockerfile](dev/Dockerfile). The stack has password login and no external
+identity provider or bucket.
+
+Run from this checkout:
+
+```sh
+dev/stack.sh setup
+dev/stack.sh image
+dev/stack.sh up
+dev/stack.sh learner
+dev/stack.sh specimen
+dev/stack.sh mfe
+```
+
+The first launch takes about 20-30 minutes. `mfe` builds all MFEs and can take
+longer. Stop other local Open edX stacks before `up`, as this stack uses port 80.
+Open the LMS at http://local.openedx.io, Studio at http://studio.local.openedx.io,
+and the MFEs at http://apps.local.openedx.io.
+
+`dev/specimen` is an OLX course for checking text, code, questions and a video
+block. It does not replace a production course. To inspect another course, run
+`dev/stack.sh course /path/to/olx` and enrol the learner with
+`dev/stack.sh learner course-v1:ORG+COURSE+RUN`.
+
+Configuration and data use `.tutor/`, under the Compose project `qhub_theme_dev`.
+Set `QHUB_DEV_ROOT` to use another Tutor root; `make test-dev-stack` uses a
+temporary root and exercises the actual setup command without Docker.
+`dev/stack.sh down` stops the stack and keeps its data. After editing the theme,
+run `image` and `restart`; after editing MFE components, run `mfe`.
+When a proxy inspects TLS, set `QHUB_DEV_EXTRA_CA` to its PEM root certificate
+before building the MFE image.
+
 ## Consume a release
 
 Install the wheel from the GitHub release using its exact URL and SHA-256 hash.

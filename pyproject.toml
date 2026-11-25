@@ -35,6 +35,7 @@ dev = [
   "twine",
   "django",
   "djangorestframework",
+  "uv",
 ]
 
 [project.entry-points."tutor.plugin.v1"]
@@ -59,7 +60,7 @@ artifacts = ["tutorindigo/brand/dist/**", "tutorindigo/templates/indigo/**/image
 [tool.hatch.build.targets.sdist]
 # Disable strict naming, otherwise twine is not able to detect name/version
 strict-naming = false
-include = ["/tutorindigo", "/scripts", "/tests", "/SCENARIOS.md", "/README.md", "/README.rst", "/LICENSE.txt", "/Makefile"]
+include = ["/tutorindigo", "/scripts", "/tests", "/dev", "/SCENARIOS.md", "/README.md", "/README.rst", "/LICENSE.txt", "/Makefile"]
 exclude = ["**/node_modules/**", "**/__pycache__/**", "**/brand/paragon/build/**", "**/brand/paragon/tokens/build-src/**"]
 
 # we need this becuase our project escapes default hatch file selection.

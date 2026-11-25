@@ -1,0 +1,10 @@
+<problem display_name="Pytanie kontrolne" max_attempts="3" weight="1.0" showanswer="always">
+  <multiplechoiceresponse>
+    <label>Co zwraca pomiar kubitu w stanie |+⟩?</label>
+    <choicegroup type="MultipleChoice">
+      <choice correct="false">A. Zawsze 0.</choice>
+      <choice correct="true">B. 0 albo 1, każde z prawdopodobieństwem 1/2.</choice>
+      <choice correct="false">C. Zawsze 1.</choice>
+    </choicegroup>
+  </multiplechoiceresponse>
+</problem>
