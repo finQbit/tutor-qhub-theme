@@ -22,6 +22,10 @@ jobs:
       - run: pip install '.[dev]' tutor==22.0.4 tutor-mfe==22.1.2
       - run: make build
       - run: make test
+      - name: Build the standalone development image
+        run: |
+          dev/stack.sh setup
+          dev/stack.sh image
       - uses: actions/upload-artifact@v4
         if: always()
         with:
