@@ -1,0 +1,66 @@
+{
+  "typography": {
+    "font": {
+      "family": {
+        "sans": {
+          "serif": {
+            "$value": "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif",
+            "$description": "Quantum Hub: Inter for interface and reading. A string: a list would merge with Paragon's item by item."
+          }
+        },
+        "monospace": {
+          "$value": "'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace",
+          "$description": "Quantum Hub: JetBrains Mono, for code only."
+        }
+      },
+      "size": {
+        "base": {
+          "$value": "1rem",
+          "$description": "Quantum Hub: Body UI, 16px."
+        },
+        "h1": {
+          "base": {
+            "$value": "1.875rem",
+            "$description": "Quantum Hub: Headline."
+          },
+          "mobile": {
+            "$value": "1.5rem",
+            "$description": "Quantum Hub: Headline below 768px."
+          }
+        },
+        "h2": {
+          "base": {
+            "$value": "1.5rem"
+          }
+        },
+        "h3": {
+          "base": {
+            "$value": "1.25rem",
+            "$description": "Quantum Hub: Title."
+          }
+        },
+        "h4": {
+          "base": {
+            "$value": "1.0625rem"
+          }
+        },
+        "h5": {
+          "base": {
+            "$value": "0.875rem"
+          }
+        },
+        "h6": {
+          "base": {
+            "$value": "0.75rem"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "base": {
+        "$value": "1.5",
+        "$description": "Quantum Hub: Body UI line height."
+      }
+    }
+  }
+}

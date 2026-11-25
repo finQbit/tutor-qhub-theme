@@ -1,45 +1,43 @@
-$primary: {{ INDIGO_PRIMARY_COLOR }};
-$primary-light: #F2F7F8;
+// Indigo's variables with Quantum Hub's colours and typography (theme/README.md). Indigo's names are kept:
+// its stylesheets use them. Light mode first, then Indigo's dark mode (body.indigo-dark-theme).
 
-// Theme fonts
-$font-family-title: 'Inter', sans-serif;
-$serif: Crimson;
-$f-sans-serif: Crimson, 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+$primary: #B34700; // Deep Ember: links and current states; buttons are recoloured in _qhub.scss
+$primary-light: #F6F7F9; // Indigo's quiet surface: Well Grey
+
+// Inter for everything that is read; Indigo's serif (Crimson) is not used.
+$font-family-title: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$serif: $font-family-title;
+$f-sans-serif: $font-family-title;
 // Initialize the Open edX Bootstrap theme
 @import 'edx-bootstrap/sass/open-edx/theme';
 
-
-// Introducing new variables
-
-$dark: #111827;
-$light-dark: #374151;
+$dark: #1F2937; // Graphite Ink: text
+$light-dark: #4B5563; // Slate: secondary text
 $big-screen: 1200px;
 
-
-
-// Introducing dark-theme variables
-
-$primary-d: #AEC7F6;
-$primary-light-d: #292A2C;
-$gray-light: #E5E7EB;
-$gray-lighter: #c8c8c8;
-$light-dark-d: #374151;
-$text-color-d: #F8F8F8;
-$text-color-primary: #DDDFE2;
-$border-color-d: #777792;
-$light-overlay-d: #36383B;
-$danger-d: #FFA07A;
-$success-d: #54CF5E;
-$btn-color-d: #112F6B;
-$body-bg-d: #0D0D0E;
+// Dark mode
+$primary-d: #FF9A2E; // Bright Ember
+$primary-light-d: #232326; // Night Well: Indigo's dark surfaces
+$gray-light: #E3E5E9; // Hairline Grey
+$gray-lighter: #C9CDD3;
+$light-dark-d: #3A3A40;
+$text-color-d: #E8E8EA; // Night Ink
+$text-color-primary: #BDBDC2; // Night Slate
+$border-color-d: #2E2E32; // Night Hairline
+$light-overlay-d: #232326;
+$danger-d: #FFB4B4;
+$success-d: #9BE7B4;
+$btn-color-d: #1A1206; // Charred Ink: text on the orange fill
+$body-bg-d: #121212; // Night Ground
 
 $instructor-input-border-color: $gray-lighter;
-$light-theme-switch-bg-color: $primary;
-$dark-theme-switch-bg-color: #717D8A;
+// The theme switch shows its state: Control Grey off (light mode), Bright Ember on (dark mode).
+$light-theme-switch-bg-color: #7E8590;
+$dark-theme-switch-bg-color: #FF9A2E;
 
-$warning-400: #ffe340;
-$warning-700: #9c4607;
-$warning-accent-700: #fffcf5;
+// Warnings are neutral: Quantum Hub keeps blue, green and red for notes and feedback.
+$warning-400: #7E8590;
+$warning-700: #1F2937;
+$warning-accent-700: #F6F7F9;
 
 $page-color-transition: transparent .2s ease, color .2s ease;

@@ -1,0 +1,265 @@
+// Quantum Hub over Indigo's styles: what DESIGN.md asks beyond the tokens (paragon/tokens/src). Imported last.
+
+// One soft shadow lifts content cards; floating layers (menus, popovers, toasts, modals) share one overlay shadow.
+:root {
+  --qh-shadow-card: 0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
+  --qh-shadow-overlay: 0 8px 24px rgba(17, 24, 39, 0.12), 0 2px 6px rgba(17, 24, 39, 0.06);
+  --qh-selection: #FFD9B0;
+  --qh-duration: 150ms;
+  --qh-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --pgn-course-card-shadow: var(--qh-shadow-card);
+  --pgn-elevation-dropdown-box-shadow: var(--qh-shadow-overlay);
+  --pgn-elevation-popover-box-shadow: var(--qh-shadow-overlay);
+  --pgn-elevation-toast-box-shadow: var(--qh-shadow-overlay);
+}
+
+[data-paragon-theme-variant="dark"] {
+  --qh-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --qh-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4);
+  --qh-selection: #5A3410;
+  color-scheme: dark;
+}
+
+.card,
+.pgn__card {
+  box-shadow: var(--qh-shadow-card);
+}
+
+.dropdown-menu,
+.pgn__menu,
+.popover,
+.toast,
+.modal-content,
+.pgn__modal {
+  box-shadow: var(--qh-shadow-overlay);
+}
+
+// Browser surfaces carry the palette too.
+body {
+  caret-color: var(--pgn-color-primary-base);
+}
+
+::selection {
+  background: var(--qh-selection);
+  color: var(--pgn-color-body-base);
+}
+
+html {
+  scrollbar-color: var(--pgn-color-gray-500) var(--pgn-color-body-bg);
+}
+
+// Links in running text: the deep orange, underlined 1px at a 3px offset, 2px on hover.
+.inline-link,
+p a:not(.btn),
+.alert a:not(.btn),
+.pgn__alert-message-wrapper a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness var(--qh-duration) var(--qh-ease);
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+// Numbers that count or align use tabular figures.
+.tabular-nums,
+time,
+.pgn__data-table td {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// The lockup (QuantumHubLogo, QuantumHubFooter of openedx-deploy/mfe): dark ink in light mode, light ink in dark mode.
+.qh-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.qh-logo img,
+.qh-footer__lockup {
+  display: block;
+  height: 26px;
+  width: auto;
+}
+
+.qh-logo__dark {
+  display: none !important;
+}
+
+[data-paragon-theme-variant="dark"] {
+  .qh-logo__light {
+    display: none !important;
+  }
+
+  .qh-logo__dark {
+    display: block !important;
+  }
+}
+
+// The footer: card surface with a hairline above; the lockup and links, then the EU funding logos on their white
+// plate, then the legal line.
+.qh-footer {
+  background: var(--pgn-color-white);
+  border-top: 1px solid var(--pgn-color-border);
+  color: var(--pgn-color-gray-700);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  padding: 2.5rem 2.5rem 1.5rem;
+
+  &__main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  &__links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  &__links a {
+    color: var(--pgn-color-gray-700);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  &__legal {
+    margin: 1.5rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--pgn-color-border);
+    color: var(--pgn-color-gray-600);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 2rem 1rem 1.5rem;
+
+    &__main {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}
+
+// The EU funding logos: always on a white plate, the file as supplied (The Fixed Plate Rule). The strip is 13 times
+// as wide as it is tall: on DESIGN.md's 560px plate, made for the earlier file, its lettering would be unreadable.
+.qh-funding {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 0;
+}
+
+.qh-funding-plate {
+  background: #FFFFFF;
+  border: 1px solid var(--pgn-color-border);
+  border-radius: var(--pgn-size-border-radius-base);
+  padding: 0.75rem 1.25rem;
+  max-width: 960px;
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// The learning MFE's header and course tabs: the card surface with a hairline below (DESIGN.md, Header and
+// Navigation). The lockup is 26px tall in every MFE's header.
+#root .learning-header,
+header.site-header-desktop,
+header.site-header-mobile,
+#root .course-tabs-navigation {
+  background: var(--pgn-color-white);
+  border-bottom: 1px solid var(--pgn-color-border);
+}
+
+header .logo img,
+header img.logo-image,
+header .qh-logo img {
+  height: 26px !important;
+  width: auto !important;
+}
+
+// Borders the MFEs set in fixed colours follow the hairline in both modes.
+#root .sequence,
+#root .outline-sidebar-heading-wrapper {
+  border-color: var(--pgn-color-border) !important;
+}
+
+// The current unit in the course outline: Ember Wash, as every current state.
+#root .collapsible-body li.bg-info-100 {
+  background: var(--pgn-color-primary-100) !important;
+}
+
+// Up to 768px the header keeps the lockup and the controls; the course name and the learner's name give way.
+@media (max-width: 767.98px) {
+  #root .learning-header .course-title-lockup,
+  #root .learning-header .user-dropdown .d-md-inline {
+    display: none !important;
+  }
+}
+
+// The unit is one card: the learning MFE's sequence takes the card's surface and shadow, as the frame inside it does.
+#root .sequence-container .sequence {
+  background: var(--pgn-color-white);
+  box-shadow: var(--qh-shadow-card);
+}
+
+// Alert icons take their variant's colour (the MFEs set them black).
+@each $variant in (info, success, danger, warning) {
+  #root .alert.alert-#{$variant} .alert-icon {
+    color: var(--pgn-color-#{$variant}-500);
+  }
+}
+
+// Decoration is orange and grey only: the learner dashboard's illustration loses its cyan.
+#looking-for-challenge-widget .pgn__card-image-cap {
+  filter: grayscale(1);
+}
+
+// The theme toggle shows its state: Control Grey off, the accent on; its icons in Slate.
+.theme-toggle-button {
+  .slider {
+    background-color: var(--pgn-color-gray-500) !important;
+  }
+
+  input:checked + .slider {
+    background-color: var(--pgn-color-primary-base) !important;
+  }
+
+  .light-theme-icon > span,
+  .dark-theme-icon > span {
+    color: var(--pgn-color-gray-700);
+  }
+}
+
+// Footer links are Slate, underlined on hover only (above Paragon's p > a[href]:not(.btn)).
+.qh-footer .qh-footer__links a[href],
+.qh-footer .qh-footer__legal > a[href] {
+  color: var(--pgn-color-gray-700);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -3,7 +3,7 @@
 SRC_DIRS = ./tutorindigo
 
 # Warning: These checks are not necessarily run on every PR.
-test: test-lint test-types test-format test-pythonpackage test-indigo-theme # Run some static checks.
+test: test-lint test-types test-format test-pythonpackage test-indigo-theme test-release # Run some static checks.
 
 test-indigo-theme: ## Run the indigo_theme unit tests
 	cd tutorindigo/templates/indigo_theme && python -m django test tests --settings=tests.settings --pythonpath=.
@@ -18,10 +18,10 @@ test-types: ## Run type checks.
 	mypy --exclude=templates --ignore-missing-imports --implicit-reexport --strict ${SRC_DIRS}
 
 build-pythonpackage: ## Build the "tutor-indigo" python package for upload to pypi
-	python -m build --sdist
+	python -m build
 
 test-pythonpackage: build-pythonpackage ## Test that package can be uploaded to pypi
-	twine check dist/tutor_indigo-$(shell make version).tar.gz
+	twine check dist/tutor_qhub_theme-$(shell make version).tar.gz
 
 format: ## Format code automatically
 	ruff format ${SRC_DIRS}
@@ -43,3 +43,10 @@ help: ## Print this help
 	@grep -E '^([a-zA-Z_-]+:.*?## .*|######* .+)$$' Makefile \
 		| sed 's/######* \(.*\)/@               $(ESCAPE)[1;31m\1$(ESCAPE)[0m/g' | tr '@' '\n' \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[33m%-30s\033[0m %s\n", $$1, $$2}'
+
+.PHONY: build test-release
+build: ## Build brand assets and Python release artifacts
+	bash scripts/build.sh
+
+test-release: ## Render Tutor from the built wheel in a clean environment
+	bash tests/release/run.sh

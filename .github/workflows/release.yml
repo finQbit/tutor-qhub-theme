@@ -1,0 +1,34 @@
+name: Release theme
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: pip install '.[dev]' tutor==22.0.4 tutor-mfe==22.1.2
+      - name: Tag matches the package version
+        run: test "$GITHUB_REF_NAME" = "v$(make --no-print-directory version)"
+      - run: make build
+      - run: make test
+      - name: Publish package and complete source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd dist
+          sha256sum *.whl *.tar.gz > SHA256SUMS
+          gh release create "$GITHUB_REF_NAME" *.whl *.tar.gz SHA256SUMS --verify-tag --generate-notes

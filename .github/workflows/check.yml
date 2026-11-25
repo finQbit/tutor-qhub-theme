@@ -1,0 +1,28 @@
+name: Check theme
+on:
+  pull_request:
+  push:
+    branches: [main, release]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: pip install '.[dev]' tutor==22.0.4 tutor-mfe==22.1.2
+      - run: make build
+      - run: make test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: theme-release
+          path: dist/

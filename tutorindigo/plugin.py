@@ -572,3 +572,6 @@ FRONTEND_SITE_CONFIG["theme"] = {
     ),
     priority=hooks.priorities.LOW,
 )
+
+# Register the Quantum Hub overrides after the upstream Indigo hooks.
+from . import qhub  # noqa: E402, F401
