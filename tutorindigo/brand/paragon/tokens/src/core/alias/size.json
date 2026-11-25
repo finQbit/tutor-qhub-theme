@@ -1,0 +1,11 @@
+{
+  "size": {
+    "border": {
+      "radius": {
+        "base": { "$value": "0.5rem", "$description": "Quantum Hub: 8px for buttons, notes, code and choices." },
+        "lg": { "$value": "0.625rem", "$description": "Quantum Hub: 10px for the unit card." },
+        "sm": { "$value": "0.375rem", "$description": "Quantum Hub: 6px for small controls." }
+      }
+    }
+  }
+}

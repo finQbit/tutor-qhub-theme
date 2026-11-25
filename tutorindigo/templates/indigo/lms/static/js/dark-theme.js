@@ -6,7 +6,7 @@ $(document).ready(function() {
     function applyThemeOnPage(){
       const theme = $.cookie(themeCookie);
 
-      if (theme === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      if ((theme === undefined || theme === 'undefined') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         setTimeout(() => {
           $('body').addClass("indigo-dark-theme");
           $("#toggle-switch-input").prop("checked", true);

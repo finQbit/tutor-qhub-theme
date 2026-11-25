@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:04,000
+Wyobraź sobie portfel złożony z trzech spółek.
+
+2
+00:00:04,000 --> 00:00:09,000
+W pierwszej kolumnie mamy liczbę akcji.
+
+3
+00:00:09,000 --> 00:00:14,000
+W drugiej dzienne stopy zwrotu.

@@ -1,0 +1,3 @@
+# Tutor versions used to develop and check this theme.
+tutor==22.0.4
+tutor-mfe==22.1.2

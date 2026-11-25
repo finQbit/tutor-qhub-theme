@@ -1,0 +1,639 @@
+{
+  "$type": "color",
+  "color": {
+    "primary": {
+      "base": {
+        "$value": "#FF9A2E",
+        "$description": "Quantum Hub: the readable orange (Deep Ember / Bright Ember)."
+      },
+      "100": {
+        "$value": "#2A1D0F"
+      },
+      "200": {
+        "$value": "#5A3410"
+      },
+      "300": {
+        "$value": "#8C5A25"
+      },
+      "400": {
+        "$value": "#C67A2A"
+      },
+      "600": {
+        "$value": "#FFA443"
+      },
+      "700": {
+        "$value": "#FFB066"
+      },
+      "800": {
+        "$value": "#FFC285"
+      },
+      "900": {
+        "$value": "#FFD4A6"
+      },
+      "light": {
+        "$value": "#232326"
+      },
+      "border": {
+        "$value": "#75757D"
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#FF9A2E",
+        "$description": "Quantum Hub: same as primary; orange is the only brand colour."
+      },
+      "100": {
+        "$value": "#2A1D0F"
+      },
+      "200": {
+        "$value": "#5A3410"
+      },
+      "300": {
+        "$value": "#8C5A25"
+      },
+      "400": {
+        "$value": "#C67A2A"
+      },
+      "600": {
+        "$value": "#FFA443"
+      },
+      "700": {
+        "$value": "#FFB066"
+      },
+      "800": {
+        "$value": "#FFC285"
+      },
+      "900": {
+        "$value": "#FFD4A6"
+      }
+    },
+    "gray": {
+      "base": {
+        "$value": "#75757D"
+      },
+      "100": {
+        "$value": "#232326"
+      },
+      "200": {
+        "$value": "#2E2E32"
+      },
+      "300": {
+        "$value": "#3A3A40"
+      },
+      "400": {
+        "$value": "#55555C"
+      },
+      "600": {
+        "$value": "#9A9AA1"
+      },
+      "700": {
+        "$value": "#BDBDC2"
+      },
+      "800": {
+        "$value": "#D2D2D6"
+      },
+      "900": {
+        "$value": "#E8E8EA"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "#3A3A40"
+      },
+      "100": {
+        "$value": "#232326"
+      },
+      "200": {
+        "$value": "#121212"
+      },
+      "300": {
+        "$value": "#26262A"
+      },
+      "400": {
+        "$value": "#2E2E32"
+      },
+      "600": {
+        "$value": "#48484E"
+      },
+      "700": {
+        "$value": "#55555C"
+      },
+      "800": {
+        "$value": "#75757D"
+      },
+      "900": {
+        "$value": "#9A9AA1"
+      }
+    },
+    "success": {
+      "base": {
+        "$value": "#9BE7B4"
+      },
+      "100": {
+        "$value": "#10291B"
+      },
+      "200": {
+        "$value": "#2F6B45"
+      },
+      "300": {
+        "$value": "#4A8F63"
+      },
+      "400": {
+        "$value": "#74C08E"
+      },
+      "600": {
+        "$value": "#B0EDC4"
+      },
+      "700": {
+        "$value": "#C3F2D2"
+      },
+      "800": {
+        "$value": "#D6F6E1"
+      },
+      "900": {
+        "$value": "#E9FBEF"
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "#BFD7FF"
+      },
+      "100": {
+        "$value": "#13233D"
+      },
+      "200": {
+        "$value": "#2C4A78"
+      },
+      "300": {
+        "$value": "#4D6E9F"
+      },
+      "400": {
+        "$value": "#8AA9D6"
+      },
+      "600": {
+        "$value": "#CCDFFF"
+      },
+      "700": {
+        "$value": "#D9E7FF"
+      },
+      "800": {
+        "$value": "#E5EFFF"
+      },
+      "900": {
+        "$value": "#F2F7FF"
+      }
+    },
+    "danger": {
+      "base": {
+        "$value": "#FFB4B4"
+      },
+      "100": {
+        "$value": "#2E1416"
+      },
+      "200": {
+        "$value": "#7A2E33"
+      },
+      "300": {
+        "$value": "#A3555A"
+      },
+      "400": {
+        "$value": "#D98589"
+      },
+      "600": {
+        "$value": "#FFC2C2"
+      },
+      "700": {
+        "$value": "#FFD0D0"
+      },
+      "800": {
+        "$value": "#FFDEDE"
+      },
+      "900": {
+        "$value": "#FFECEC"
+      }
+    },
+    "warning": {
+      "base": {
+        "$value": "#E8E8EA"
+      },
+      "100": {
+        "$value": "#232326"
+      },
+      "200": {
+        "$value": "#75757D"
+      },
+      "300": {
+        "$value": "#9A9AA1"
+      },
+      "400": {
+        "$value": "#BDBDC2"
+      },
+      "600": {
+        "$value": "#EDEDEF"
+      },
+      "700": {
+        "$value": "#F2F2F3"
+      },
+      "800": {
+        "$value": "#F6F6F7"
+      },
+      "900": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "accent": {
+      "a": {
+        "$value": "#FF9A2E"
+      },
+      "b": {
+        "$value": "#9A9AA1"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "#E8E8EA"
+      },
+      "100": {
+        "$value": "#232326"
+      },
+      "200": {
+        "$value": "#3A3A40"
+      },
+      "300": {
+        "$value": "#75757D"
+      },
+      "400": {
+        "$value": "#BDBDC2"
+      },
+      "600": {
+        "$value": "#EDEDEF"
+      },
+      "700": {
+        "$value": "#F2F2F3"
+      },
+      "800": {
+        "$value": "#F6F6F7"
+      },
+      "900": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "secondary": {
+      "base": {
+        "$value": "#BDBDC2"
+      },
+      "100": {
+        "$value": "#232326"
+      },
+      "200": {
+        "$value": "#3A3A40"
+      },
+      "300": {
+        "$value": "#55555C"
+      },
+      "400": {
+        "$value": "#75757D"
+      },
+      "600": {
+        "$value": "#C8C8CC"
+      },
+      "700": {
+        "$value": "#D2D2D6"
+      },
+      "800": {
+        "$value": "#DDDDE0"
+      },
+      "900": {
+        "$value": "#E8E8EA"
+      }
+    },
+    "white": {
+      "$value": "#1A1A1C",
+      "$description": "Quantum Hub: in dark mode, white surfaces become the night card."
+    },
+    "body": {
+      "bg": {
+        "$value": "#121212",
+        "$description": "Quantum Hub: the page ground."
+      },
+      "base": {
+        "$value": "#E8E8EA"
+      }
+    },
+    "headings": {
+      "base": {
+        "$value": "#E8E8EA"
+      }
+    },
+    "code": {
+      "base": {
+        "$value": "#E8E8EA",
+        "$description": "Quantum Hub: code is set in the text colour."
+      }
+    },
+    "link": {
+      "base": {
+        "$value": "{color.primary.500}"
+      },
+      "inline": {
+        "base": {
+          "$value": "{color.primary.500}"
+        }
+      },
+      "muted": {
+        "base": {
+          "$value": "#BDBDC2"
+        },
+        "inline": {
+          "base": {
+            "$value": "#BDBDC2"
+          }
+        }
+      }
+    },
+    "tooltip": {
+      "bg": {
+        "base": {
+          "$value": "#E8E8EA"
+        }
+      },
+      "text": {
+        "$value": "#1A1A1C"
+      }
+    },
+    "alert": {
+      "title": {
+        "$value": "#E8E8EA"
+      },
+      "content": {
+        "$value": "#BDBDC2"
+      }
+    },
+    "card": {
+      "border": {
+        "base": {
+          "$value": "#2E2E32"
+        }
+      }
+    },
+    "dropdown": {
+      "bg": {
+        "$value": "#232326"
+      }
+    },
+    "popover": {
+      "bg": {
+        "$value": "#232326"
+      }
+    },
+    "modal": {
+      "content": {
+        "bg": {
+          "$value": "#232326"
+        }
+      }
+    },
+    "menu": {
+      "bg": {
+        "$value": "#232326"
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "#E8E8EA"
+      },
+      "light": {
+        "$value": "#BDBDC2"
+      },
+      "footer": {
+        "$value": "#BDBDC2"
+      },
+      "primary": {
+        "$value": "#BDBDC2"
+      },
+      "button": {
+        "$value": "#1A1206"
+      }
+    },
+    "bg": {
+      "hover": {
+        "$value": "#232326"
+      },
+      "info": {
+        "$value": "#13233D"
+      },
+      "light-overlay": {
+        "$value": "#232326"
+      }
+    },
+    "header": {
+      "bg": {
+        "$value": "#1A1A1C"
+      }
+    },
+    "btn": {
+      "bg": {
+        "primary": {
+          "$value": "#FF8800"
+        },
+        "outline-primary": {
+          "$value": "transparent"
+        },
+        "brand": {
+          "$value": "#FF8800"
+        },
+        "outline-brand": {
+          "$value": "transparent"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#1A1206"
+        },
+        "outline-primary": {
+          "$value": "#E8E8EA"
+        },
+        "brand": {
+          "$value": "#1A1206"
+        },
+        "outline-brand": {
+          "$value": "#E8E8EA"
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "#FF8800"
+        },
+        "outline-primary": {
+          "$value": "#75757D"
+        },
+        "brand": {
+          "$value": "#FF8800"
+        },
+        "outline-brand": {
+          "$value": "#75757D"
+        }
+      },
+      "hover": {
+        "bg": {
+          "primary": {
+            "$value": "#FFA040"
+          },
+          "outline-primary": {
+            "$value": "#232326"
+          },
+          "brand": {
+            "$value": "#FFA040"
+          },
+          "outline-brand": {
+            "$value": "#232326"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "outline-primary": {
+            "$value": "#E8E8EA"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          },
+          "outline-brand": {
+            "$value": "#E8E8EA"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#FFA040"
+          },
+          "outline-primary": {
+            "$value": "#75757D"
+          },
+          "brand": {
+            "$value": "#FFA040"
+          },
+          "outline-brand": {
+            "$value": "#75757D"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "primary": {
+            "$value": "#FFA040"
+          },
+          "outline-primary": {
+            "$value": "#232326"
+          },
+          "brand": {
+            "$value": "#FFA040"
+          },
+          "outline-brand": {
+            "$value": "#232326"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "outline-primary": {
+            "$value": "#E8E8EA"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          },
+          "outline-brand": {
+            "$value": "#E8E8EA"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#FFA040"
+          },
+          "outline-primary": {
+            "$value": "#75757D"
+          },
+          "brand": {
+            "$value": "#FFA040"
+          },
+          "outline-brand": {
+            "$value": "#75757D"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "primary": {
+            "$value": "#FF8800"
+          },
+          "brand": {
+            "$value": "#FF8800"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#FF8800"
+          },
+          "brand": {
+            "$value": "#FF8800"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "primary": {
+            "$value": "#232326"
+          },
+          "brand": {
+            "$value": "#232326"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#9A9AA1"
+          },
+          "outline-primary": {
+            "$value": "#9A9AA1"
+          },
+          "brand": {
+            "$value": "#9A9AA1"
+          },
+          "outline-brand": {
+            "$value": "#9A9AA1"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#2E2E32"
+          },
+          "outline-primary": {
+            "$value": "#2E2E32"
+          },
+          "brand": {
+            "$value": "#2E2E32"
+          },
+          "outline-brand": {
+            "$value": "#2E2E32"
+          }
+        }
+      }
+    }
+  },
+  "course": {
+    "card": {
+      "shadow": {
+        "$type": "shadow",
+        "$value": "0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3)"
+      }
+    }
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "$type": "color",
+  "color": {
+    "primary": {
+      "base": {
+        "$value": "#B34700",
+        "$description": "Quantum Hub: the readable orange (Deep Ember / Bright Ember)."
+      },
+      "100": {
+        "$value": "#FFF1E2"
+      },
+      "200": {
+        "$value": "#FFD9B0"
+      },
+      "light": {
+        "$value": "#F6F7F9"
+      },
+      "border": {
+        "$value": "#7E8590"
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#B34700",
+        "$description": "Quantum Hub: same as primary; orange is the only brand colour."
+      },
+      "100": {
+        "$value": "#FFF1E2"
+      },
+      "200": {
+        "$value": "#FFD9B0"
+      }
+    },
+    "gray": {
+      "base": {
+        "$value": "#7E8590"
+      },
+      "100": {
+        "$value": "#F6F7F9"
+      },
+      "200": {
+        "$value": "#E3E5E9"
+      },
+      "300": {
+        "$value": "#C9CDD3"
+      },
+      "400": {
+        "$value": "#A0A6AF"
+      },
+      "600": {
+        "$value": "#5E6672"
+      },
+      "700": {
+        "$value": "#4B5563"
+      },
+      "800": {
+        "$value": "#374151"
+      },
+      "900": {
+        "$value": "#1F2937"
+      }
+    },
+    "light": {
+      "base": {
+        "$value": "#D5D8DD"
+      },
+      "100": {
+        "$value": "#F6F7F9"
+      },
+      "200": {
+        "$value": "#F4F5F7"
+      },
+      "300": {
+        "$value": "#ECEEF1"
+      },
+      "400": {
+        "$value": "#E3E5E9"
+      },
+      "600": {
+        "$value": "#BFC4CB"
+      },
+      "700": {
+        "$value": "#A0A6AF"
+      },
+      "800": {
+        "$value": "#7E8590"
+      },
+      "900": {
+        "$value": "#5E6672"
+      }
+    },
+    "success": {
+      "base": {
+        "$value": "#166534"
+      },
+      "100": {
+        "$value": "#F0FDF4"
+      },
+      "200": {
+        "$value": "#86EFAC"
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "#1E3A8A"
+      },
+      "100": {
+        "$value": "#EFF6FF"
+      },
+      "200": {
+        "$value": "#BFDBFE"
+      }
+    },
+    "danger": {
+      "base": {
+        "$value": "#991B1B"
+      },
+      "100": {
+        "$value": "#FEF2F2"
+      },
+      "200": {
+        "$value": "#FCA5A5"
+      }
+    },
+    "warning": {
+      "base": {
+        "$value": "#1F2937"
+      },
+      "100": {
+        "$value": "#F6F7F9"
+      },
+      "200": {
+        "$value": "#7E8590"
+      }
+    },
+    "accent": {
+      "a": {
+        "$value": "#B34700"
+      },
+      "b": {
+        "$value": "#5E6672"
+      }
+    },
+    "dark": {
+      "base": {
+        "$value": "#1F2937"
+      }
+    },
+    "body": {
+      "bg": {
+        "$value": "#F4F5F7",
+        "$description": "Quantum Hub: the page ground."
+      },
+      "base": {
+        "$value": "#1F2937"
+      }
+    },
+    "headings": {
+      "base": {
+        "$value": "#1F2937"
+      }
+    },
+    "code": {
+      "base": {
+        "$value": "#1F2937",
+        "$description": "Quantum Hub: code is set in the text colour."
+      }
+    },
+    "link": {
+      "base": {
+        "$value": "{color.primary.500}"
+      },
+      "inline": {
+        "base": {
+          "$value": "{color.primary.500}"
+        }
+      },
+      "muted": {
+        "base": {
+          "$value": "#4B5563"
+        },
+        "inline": {
+          "base": {
+            "$value": "#4B5563"
+          }
+        }
+      }
+    },
+    "tooltip": {
+      "bg": {
+        "base": {
+          "$value": "#1F2937"
+        }
+      },
+      "text": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "alert": {
+      "title": {
+        "$value": "#1F2937"
+      },
+      "content": {
+        "$value": "#4B5563"
+      }
+    },
+    "card": {
+      "border": {
+        "base": {
+          "$value": "#E3E5E9"
+        }
+      }
+    },
+    "dropdown": {
+      "bg": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "popover": {
+      "bg": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "modal": {
+      "content": {
+        "bg": {
+          "$value": "#FFFFFF"
+        }
+      }
+    },
+    "menu": {
+      "bg": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "text": {
+      "base": {
+        "$value": "#1F2937"
+      },
+      "light": {
+        "$value": "#4B5563"
+      },
+      "footer": {
+        "$value": "#4B5563"
+      },
+      "primary": {
+        "$value": "#4B5563"
+      },
+      "button": {
+        "$value": "#1A1206"
+      }
+    },
+    "bg": {
+      "hover": {
+        "$value": "#F6F7F9"
+      },
+      "info": {
+        "$value": "#EFF6FF"
+      },
+      "light-overlay": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "header": {
+      "bg": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "btn": {
+      "bg": {
+        "primary": {
+          "$value": "#FF8800"
+        },
+        "outline-primary": {
+          "$value": "transparent"
+        },
+        "brand": {
+          "$value": "#FF8800"
+        },
+        "outline-brand": {
+          "$value": "transparent"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "#1A1206"
+        },
+        "outline-primary": {
+          "$value": "#1F2937"
+        },
+        "brand": {
+          "$value": "#1A1206"
+        },
+        "outline-brand": {
+          "$value": "#1F2937"
+        }
+      },
+      "border": {
+        "primary": {
+          "$value": "#B34700"
+        },
+        "outline-primary": {
+          "$value": "#7E8590"
+        },
+        "brand": {
+          "$value": "#B34700"
+        },
+        "outline-brand": {
+          "$value": "#7E8590"
+        }
+      },
+      "hover": {
+        "bg": {
+          "primary": {
+            "$value": "#E67A00"
+          },
+          "outline-primary": {
+            "$value": "#F6F7F9"
+          },
+          "brand": {
+            "$value": "#E67A00"
+          },
+          "outline-brand": {
+            "$value": "#F6F7F9"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "outline-primary": {
+            "$value": "#1F2937"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          },
+          "outline-brand": {
+            "$value": "#1F2937"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#B34700"
+          },
+          "outline-primary": {
+            "$value": "#7E8590"
+          },
+          "brand": {
+            "$value": "#B34700"
+          },
+          "outline-brand": {
+            "$value": "#7E8590"
+          }
+        }
+      },
+      "active": {
+        "bg": {
+          "primary": {
+            "$value": "#E67A00"
+          },
+          "outline-primary": {
+            "$value": "#F6F7F9"
+          },
+          "brand": {
+            "$value": "#E67A00"
+          },
+          "outline-brand": {
+            "$value": "#F6F7F9"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "outline-primary": {
+            "$value": "#1F2937"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          },
+          "outline-brand": {
+            "$value": "#1F2937"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#B34700"
+          },
+          "outline-primary": {
+            "$value": "#7E8590"
+          },
+          "brand": {
+            "$value": "#B34700"
+          },
+          "outline-brand": {
+            "$value": "#7E8590"
+          }
+        }
+      },
+      "focus": {
+        "bg": {
+          "primary": {
+            "$value": "#FF8800"
+          },
+          "brand": {
+            "$value": "#FF8800"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#1A1206"
+          },
+          "brand": {
+            "$value": "#1A1206"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#B34700"
+          },
+          "brand": {
+            "$value": "#B34700"
+          }
+        }
+      },
+      "disabled": {
+        "bg": {
+          "primary": {
+            "$value": "#F6F7F9"
+          },
+          "brand": {
+            "$value": "#F6F7F9"
+          }
+        },
+        "text": {
+          "primary": {
+            "$value": "#5E6672"
+          },
+          "outline-primary": {
+            "$value": "#5E6672"
+          },
+          "brand": {
+            "$value": "#5E6672"
+          },
+          "outline-brand": {
+            "$value": "#5E6672"
+          }
+        },
+        "border": {
+          "primary": {
+            "$value": "#E3E5E9"
+          },
+          "outline-primary": {
+            "$value": "#E3E5E9"
+          },
+          "brand": {
+            "$value": "#E3E5E9"
+          },
+          "outline-brand": {
+            "$value": "#E3E5E9"
+          }
+        }
+      }
+    }
+  },
+  "course": {
+    "card": {
+      "shadow": {
+        "$type": "shadow",
+        "$value": "0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04)"
+      }
+    }
+  }
+}

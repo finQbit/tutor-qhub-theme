@@ -1,16 +1,13 @@
 #https://hatch.pypa.io/latest/config/build/
 
 [project]
-name = "tutor-indigo"
-description = "Indigo theme plugin for Tutor"
-readme = { file = "README.rst", content-type = "text/x-rst" }
+name = "tutor-qhub-theme"
+description = "Quantum Hub theme for Tutor, based on Indigo"
+readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "AGPLv3" }
 requires-python = ">=3.10"
 authors = [{ name = "Edly" }, { email = "hello@edly.io" }]
-maintainers = [
-    { name = "Hammad Yousaf" }, { email = "hammad.yousaf@arbisoft.com" },
-    { name = "Muhammad Faraz Maqsood" }, { email = "faraz.maqsood@arbisoft.com" }
-]
+maintainers = [{ name = "finQbit" }]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -32,33 +29,39 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
-  "tutor[dev]>=22.0.0,<23.0.0",
-  "ruff",
+  "ruff==0.17.3",
+  "mypy",
+  "build",
+  "twine",
   "django",
   "djangorestframework",
+  "uv",
 ]
 
 [project.entry-points."tutor.plugin.v1"]
 indigo = "tutorindigo.plugin"
 
 [project.urls]
-Code = "https://github.com/overhangio/tutor-indigo"
+Code = "https://github.com/finQbit/tutor-qhub-theme"
 Community = "https://discuss.openedx.org"
 Documentation = "https://docs.tutor.edly.io/"
-Homepage = "https://github.com/overhangio/tutor-indigo"
-Changelog = "https://github.com/overhangio/tutor-indigo/blob/release/CHANGELOG.md"
-Issues = "https://github.com/overhangio/tutor-indigo/issues"
+Homepage = "https://github.com/finQbit/tutor-qhub-theme"
+Changelog = "https://github.com/finQbit/tutor-qhub-theme/blob/release/CHANGELOG.md"
+Issues = "https://github.com/finQbit/tutor-qhub-theme/issues"
 
 # hatch related configurations
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build]
+artifacts = ["tutorindigo/brand/dist/**", "tutorindigo/templates/indigo/**/images/*.png", "tutorindigo/templates/indigo/**/images/*.ico"]
+
 [tool.hatch.build.targets.sdist]
 # Disable strict naming, otherwise twine is not able to detect name/version
 strict-naming = false
-include = ["/tutorindigo"]
-exclude = ["tests*"]
+include = ["/tutorindigo", "/scripts", "/tests", "/dev", "/README.md", "/README.rst", "/LICENSE.txt", "/Makefile"]
+exclude = ["**/node_modules/**", "**/__pycache__/**", "**/brand/paragon/build/**", "**/brand/paragon/tokens/build-src/**"]
 
 # we need this becuase our project escapes default hatch file selection.
 # see https://hatch.pypa.io/latest/plugins/builder/wheel/#default-file-selection

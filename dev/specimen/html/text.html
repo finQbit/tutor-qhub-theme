@@ -1,0 +1,12 @@
+<p>Wzornik treści lekcji do sprawdzania motywu w lokalnym stacku. Akapit ma ograniczoną szerokość wiersza, a polskie znaki (ąćęłńóśźż) są w tym samym kroju co reszta tekstu.</p>
+<h3>Po tej lekcji kursant:</h3>
+<ol>
+  <li>rozpoznaje wektor stanu kubitu,</li>
+  <li>zapisuje go w notacji Diraca, np. <code>|0⟩</code> i <code>|1⟩</code>.</li>
+</ol>
+<p><strong>Kluczowa myśl:</strong> kod uruchamia się na symulatorze, nie na komputerze kwantowym. Więcej w <a href="https://openedx.org">dokumentacji</a>.</p>
+<pre><code>from qiskit import QuantumCircuit
+
+qc = QuantumCircuit(1)
+qc.h(0)  # superpozycja
+qc.measure_all()</code></pre>

@@ -1,0 +1,528 @@
+// Quantum Hub over Indigo: what DESIGN.md asks of the legacy LMS pages and the course content beyond Indigo's
+// variables (theme/README.md). Imported last by Indigo's _extras.scss; Indigo's dark mode is .indigo-dark-theme
+// on the body.
+
+// DESIGN.md's colours, by role, for light and dark mode.
+$qh-light: (
+  text: #1F2937,
+  text-2: #4B5563,
+  text-3: #5E6672,
+  surface: #FFFFFF,
+  well: #F6F7F9,
+  border: #E3E5E9,
+  control: #7E8590,
+  accent: #B34700,
+  wash: #FFF1E2,
+  selection: #FFD9B0,
+  fill-hover: #E67A00,
+  fill-edge: #B34700,
+  keyword: #9A3D00,
+  ok-bg: #F0FDF4,
+  ok-border: #86EFAC,
+  ok-text: #166534,
+  err-bg: #FEF2F2,
+  err-border: #FCA5A5,
+  err-text: #991B1B,
+  info-bg: #EFF6FF,
+  info-border: #BFDBFE,
+  info-text: #1E3A8A,
+);
+$qh-dark: (
+  text: #E8E8EA,
+  text-2: #BDBDC2,
+  text-3: #9A9AA1,
+  surface: #1A1A1C,
+  well: #232326,
+  border: #2E2E32,
+  control: #75757D,
+  accent: #FF9A2E,
+  wash: #2A1D0F,
+  selection: #5A3410,
+  fill-hover: #FFA040,
+  fill-edge: #FF8800,
+  keyword: #FFB066,
+  ok-bg: #10291B,
+  ok-border: #2F6B45,
+  ok-text: #9BE7B4,
+  err-bg: #2E1416,
+  err-border: #7A2E33,
+  err-text: #FFB4B4,
+  info-bg: #13233D,
+  info-border: #2C4A78,
+  info-text: #BFD7FF,
+);
+$qh-fill: #FF8800; // Signal Orange: fills only, always under Charred Ink
+$qh-on-fill: #1A1206;
+$qh-media-ink: #0E0E10;
+$qh-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$qh-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
+$qh-duration: 150ms;
+$qh-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+// The course content: the HTML, problem and video blocks the learning MFE shows in its frame.
+$qh-problem: '.xmodule_display.xmodule_ProblemBlock div.problem';
+
+@mixin qh-theme($c) {
+  caret-color: map-get($c, accent);
+
+  ::selection {
+    background: map-get($c, selection);
+    color: map-get($c, text);
+  }
+
+  :focus-visible {
+    outline: 2px solid map-get($c, accent);
+    outline-offset: 2px;
+  }
+
+  // Links: the deep orange, underlined 1px at a 3px offset, 2px on hover.
+  .xblock a:not(.btn):not([class*='btn']):not([class*='button']),
+  .proctored_exam_status a,
+  .sequence a.start-timed-exam,
+  .exam-text a {
+    color: map-get($c, accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  // Page titles in the text colour; the header with a hairline below; the account menu a ghost control.
+  h1 {
+    color: map-get($c, text) !important;
+  }
+
+  .global-header {
+    border-bottom-color: map-get($c, border) !important;
+  }
+
+  .toggle-user-dropdown {
+    background: transparent !important;
+    color: map-get($c, text-2) !important;
+    border: 0 !important;
+
+    &:hover,
+    &:focus {
+      background: map-get($c, well) !important;
+      color: map-get($c, text) !important;
+    }
+  }
+
+  // The legacy footer's legal lines: Caption in Muted Slate with a hairline above.
+  .wrapper-footer .qh-legal {
+    margin: 0;
+    color: map-get($c, text-3);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+
+    &:first-of-type {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid map-get($c, border);
+    }
+
+    a {
+      color: map-get($c, text-2);
+    }
+  }
+
+  // Blocks of a unit are separated by a hairline.
+  .vert-mod > .vert,
+  .vert-mod .vert,
+  hr {
+    border-color: map-get($c, border) !important;
+  }
+
+  // Lesson prose: Body at a 70-character measure, Title for section headings, code in JetBrains Mono.
+  .xmodule_display.xmodule_HtmlBlock,
+  .xblock-student_view-html {
+    color: map-get($c, text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+
+    p,
+    li {
+      max-width: 70ch;
+    }
+
+    h3 {
+      color: map-get($c, text);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    code {
+      font-family: $qh-mono;
+      font-size: 0.875em;
+      background: map-get($c, well);
+      border: 1px solid map-get($c, border);
+      border-radius: 4px;
+      padding: 0.1em 0.35em;
+      color: map-get($c, text);
+    }
+
+    pre {
+      white-space: pre;
+      font-family: $qh-mono;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      tab-size: 4;
+      max-width: 70ch;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      background: map-get($c, well);
+      border: 1px solid map-get($c, border);
+      border-radius: 8px;
+      color: map-get($c, text);
+
+      code {
+        background: none;
+        border: 0;
+        padding: 0;
+        font-size: inherit;
+      }
+    }
+  }
+
+  // Check questions: each answer a card with a hairline; hover darkens it, the chosen one takes the accent
+  // and Ember Wash; after submission Correct or Error, always with the status word and icon.
+  .xmodule_display.xmodule_ProblemBlock .problem-header {
+    color: map-get($c, text);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  #{$qh-problem} {
+    color: map-get($c, text);
+
+    .choicegroup .field {
+      margin-bottom: 0.5rem;
+    }
+
+    .choicegroup label,
+    .choicegroup input + label,
+    .choicetextgroup input + label {
+      border: 1px solid map-get($c, border);
+      border-radius: 8px;
+      background: transparent;
+      color: map-get($c, text);
+      font-size: 1rem;
+      transition: border-color $qh-duration $qh-ease, background-color $qh-duration $qh-ease;
+    }
+
+    .choicegroup input:hover + label,
+    .choicegroup input:focus + label {
+      border-color: map-get($c, control);
+    }
+
+    .choicegroup input:checked + label {
+      border-color: map-get($c, accent);
+      background: map-get($c, wash);
+    }
+
+    .choicegroup input + label.choicegroup_correct,
+    .choicegroup input:focus + label.choicegroup_correct,
+    .choicegroup input:hover + label.choicegroup_correct {
+      border-color: map-get($c, ok-border);
+      background: map-get($c, ok-bg);
+    }
+
+    .choicegroup input + label.choicegroup_incorrect,
+    .choicegroup input:focus + label.choicegroup_incorrect,
+    .choicegroup input:hover + label.choicegroup_incorrect {
+      border-color: map-get($c, err-border);
+      background: map-get($c, err-bg);
+    }
+
+    input[type='radio'],
+    input[type='checkbox'] {
+      accent-color: map-get($c, accent);
+    }
+
+    .indicator-container .status.correct .status-icon::after,
+    .status.correct {
+      color: map-get($c, ok-text);
+    }
+
+    .indicator-container .status.incorrect .status-icon::after,
+    .status.incorrect {
+      color: map-get($c, err-text);
+    }
+
+    // Colour is never the only signal: CAPA's status word, kept for screen readers, shows beside the icon.
+    .indicator-container .status.correct .sr,
+    .indicator-container .status.incorrect .sr {
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+      overflow: visible;
+      margin-left: 0.5rem;
+      background: transparent;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .indicator-container .status.correct .sr {
+      color: map-get($c, ok-text);
+    }
+
+    .indicator-container .status.incorrect .sr {
+      color: map-get($c, err-text);
+    }
+
+    .notification {
+      border-radius: 8px;
+      font-size: 0.875rem;
+
+      &.success {
+        background: map-get($c, ok-bg);
+        border-color: map-get($c, ok-border);
+        color: map-get($c, ok-text);
+      }
+
+      &.error {
+        background: map-get($c, err-bg);
+        border-color: map-get($c, err-border);
+        color: map-get($c, err-text);
+      }
+
+      &.general,
+      &.warning,
+      &.problem-hint {
+        background: map-get($c, well);
+        border-color: map-get($c, border);
+        color: map-get($c, text);
+      }
+
+      .icon {
+        color: inherit;
+      }
+    }
+
+    .action {
+      .submit-attempt-container .submit:disabled,
+      .submit:disabled {
+        background: map-get($c, well) !important;
+        border-color: map-get($c, border) !important;
+        color: map-get($c, text-3) !important;
+        opacity: 1;
+      }
+
+      .problem-action-btn.btn-link {
+        color: map-get($c, accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .submission-feedback {
+        color: map-get($c, text-3);
+        font-variant-numeric: tabular-nums;
+      }
+    }
+  }
+
+  // The video transcript: lines in Slate, the current one on Ember Wash in Graphite Ink.
+  .video .tc-wrapper {
+    background: transparent;
+  }
+
+  // The hairline is an inset shadow: a border would widen the transcript past the player's percentage layout.
+  .video .subtitles {
+    background: map-get($c, surface);
+    box-shadow: inset 0 0 0 1px map-get($c, border);
+    border-radius: 8px;
+
+    li,
+    li span {
+      color: map-get($c, text-2);
+
+      &:hover,
+      &:focus {
+        color: map-get($c, text);
+      }
+
+      &.current,
+      &.current span {
+        background: map-get($c, wash);
+        color: map-get($c, text);
+        font-weight: 500;
+        border-radius: 6px;
+      }
+
+      &.spacing,
+      &.spacing a {
+        color: map-get($c, accent);
+      }
+    }
+  }
+}
+
+body {
+  font-family: $qh-font;
+  -webkit-font-smoothing: antialiased;
+}
+
+// The lockup is 26px tall in the header.
+.global-header .header-logo a .logo,
+.header-logo img.logo,
+.logo img.logo-image {
+  height: 26px !important;
+  width: auto !important;
+}
+
+code, kbd, pre, samp {
+  font-family: $qh-mono;
+}
+
+body {
+  @include qh-theme($qh-light);
+}
+
+// body.indigo-dark-theme carries Indigo's dark mode; the frame of the learning MFE takes the card's surface.
+body.indigo-dark-theme {
+  @include qh-theme($qh-dark);
+  color-scheme: dark;
+
+  &.view-in-course {
+    background: map-get($qh-dark, surface) !important;
+  }
+}
+
+// The Two Oranges Rule: Signal Orange fills primary actions under Charred Ink, with a Deep Ember edge in light mode.
+.btn-primary,
+.btn-brand,
+#{$qh-problem} .action .submit {
+  background-color: $qh-fill !important;
+  border: 1px solid map-get($qh-light, fill-edge) !important;
+  color: $qh-on-fill !important;
+  transition: background-color $qh-duration $qh-ease;
+
+  &:hover,
+  &:focus {
+    background-color: map-get($qh-light, fill-hover) !important;
+    color: $qh-on-fill !important;
+  }
+}
+
+.indigo-dark-theme {
+  .btn-primary,
+  .btn-brand,
+  #{$qh-problem} .action .submit {
+    border-color: map-get($qh-dark, fill-edge) !important;
+
+    &:hover,
+    &:focus {
+      background-color: map-get($qh-dark, fill-hover) !important;
+      border-color: map-get($qh-dark, fill-hover) !important;
+    }
+  }
+}
+
+// The video player keeps its own dark chrome in both modes; the play button and the seek bar take Signal Orange.
+.video {
+  .video-wrapper,
+  .video-player-pre,
+  .video-player-post {
+    background: $qh-media-ink;
+  }
+
+  .video-controls {
+    background: #14171D;
+
+    .control,
+    .vcr .control,
+    .secondary-controls .control {
+      background: #14171D;
+      color: #E7E9ED;
+
+      &:hover,
+      &:focus,
+      &.is-active {
+        background: #262B34;
+        color: #FFFFFF;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #FFB066;
+        outline-offset: -2px;
+      }
+    }
+
+    .vidtime {
+      color: #C9CED6;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .slider {
+      background: #3A3F47;
+      border-color: #3A3F47;
+
+      .ui-slider-range {
+        background: $qh-fill;
+        border-color: $qh-fill;
+      }
+
+      .ui-slider-handle {
+        background: $qh-fill;
+        border-color: $qh-on-fill;
+      }
+    }
+  }
+
+  .btn-play {
+    color: $qh-on-fill;
+    background: $qh-fill;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  .closed-captions {
+    background: rgba(11, 13, 17, 0.86);
+    color: #FFFFFF;
+    border-radius: 4px;
+  }
+}
+
+// The EU funding logos sit on a white plate in both modes (The Fixed Plate Rule). The strip is 13 times as wide as it
+// is tall: on DESIGN.md's 560px plate, made for the earlier file, its lettering would be unreadable.
+.qh-funding {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 0;
+
+  .qh-funding-plate {
+    background: #FFFFFF;
+    border: 1px solid map-get($qh-light, border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    max-width: 960px;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.indigo-dark-theme .qh-funding .qh-funding-plate {
+  border-color: map-get($qh-dark, border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
