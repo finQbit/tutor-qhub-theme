@@ -20,7 +20,6 @@ from the Quantum Hub CDN with SHA-256 verification, then builds a wheel and sour
 archive. Both include the source of the brand and theme. The wheel also includes
 the compiled CSS and the images. `tests/release/run.sh` installs the wheel in a
 clean environment with Tutor 22.0.4 and tutor-mfe 22.1.2, then renders the theme.
-See [SCENARIOS.md](SCENARIOS.md) for the application checks required before rollout.
 
 ## Local development stack
 
