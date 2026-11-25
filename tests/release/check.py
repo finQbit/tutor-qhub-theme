@@ -42,7 +42,7 @@ assert (
     "${settings.QHUB_THEME_SOURCE_URL}"
     in (theme / "lms/templates/footer.html").read_text()
 )
-assert source in (root / "env/apps/openedx/settings/lms/common.py").read_text()
+assert ast.literal_eval(assignments["QHUB_THEME_SOURCE_URL"]) == source
 assert source in mfe
 assert mfe.count("const QuantumHubLogo") == 1
 assert mfe.count("const QuantumHubFooter") == 1
