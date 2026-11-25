@@ -14,7 +14,6 @@ from .__about__ import __version__
 
 HERE = Path(__file__).parent
 SOURCE_URL = f"https://github.com/finQbit/tutor-qhub-theme/releases/tag/v{__version__}"
-hooks.Filters.CONFIG_DEFAULTS.add_item(("QHUB_THEME_SOURCE_URL", SOURCE_URL))
 
 # Quantum Hub's shared visual assets (ADR 0027 of quantum-hub-environments): a file's
 # version is in its name, and
@@ -106,6 +105,7 @@ LOGO_URL = {LOGO!r}
 LOGO_TRADEMARK_URL = {LOGO!r}
 LOGO_URL_PNG_FOR_EMAIL = {LOGO_EMAIL!r}
 FAVICON_URL = {FAVICON!r}
+QHUB_THEME_SOURCE_URL = {SOURCE_URL!r}
 """,
         ),
     ]

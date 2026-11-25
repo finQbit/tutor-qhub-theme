@@ -43,7 +43,7 @@
             ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
           </a>
         % endif
-        · <a href="{{ QHUB_THEME_SOURCE_URL }}">${"Kod źródłowy" if (get_language() or "").startswith("pl") else "Source code"}</a>
+        · <a href="${settings.QHUB_THEME_SOURCE_URL}">${"Kod źródłowy" if (get_language() or "").startswith("pl") else "Source code"}</a>
       </p>
     </div>
   </footer>
