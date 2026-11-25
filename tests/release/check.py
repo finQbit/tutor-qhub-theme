@@ -1,5 +1,6 @@
 """Check the installed release and its rendered LMS, Studio and MFE artifacts."""
 
+import ast
 import hashlib
 import importlib.metadata
 import sys
@@ -15,10 +16,23 @@ theme = root / "env/build/openedx/themes/indigo"
 mfe = (root / "env/plugins/mfe/build/mfe/env.config.jsx").read_text()
 lms = (root / "env/apps/openedx/settings/lms/production.py").read_text()
 
+assignments = {
+    ast.unparse(target): node.value
+    for node in ast.parse(lms).body
+    if isinstance(node, ast.Assign)
+    for target in node.targets
+}
+paragon = ast.literal_eval(assignments["MFE_CONFIG['PARAGON_THEME_URLS']"])
+site = ast.literal_eval(assignments["FRONTEND_SITE_CONFIG['theme']"])
 for variant in ("core", "light", "dark"):
     assert (package / f"brand/dist/{variant}.min.css").stat().st_size > 0
-    assert f"/{variant}.min.css?v={version}" in lms
-assert "cdn.jsdelivr.net/gh/edly-io/brand-openedx" not in lms
+    expected = (
+        f"http://local.openedx.io/static/qhub-brand/{variant}.min.css?v={version}"
+    )
+    entry = paragon["core"] if variant == "core" else paragon["variants"][variant]
+    assert entry["urls"]["brandOverride"] == expected
+    entry = site["core"] if variant == "core" else site["variants"][variant]
+    assert entry["url"] == expected
 assert "var ENABLED = false;" in (theme / "lms/static/js/dynamic-theme.js").read_text()
 assert (
     "theme === undefined || theme === 'undefined'"
